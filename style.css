@@ -1,10 +1,17 @@
 /* TODO: Later want to change background image based on button hover, to give preview */
 /* TODO: better page animation */
+/* TODO: flexbox model */
 /* header goes up, new header comes in from top, main slides in from side?? */
 /* TODO add vcard download */
 
 html {
   box-sizing: border-box;
+  /*-webkit-font-smoothing: antialiased;*/
+}
+
+html, body {
+    height: 100%;
+    font-size: 100%;
 }
 
 *, *:before, *:after {
@@ -12,26 +19,48 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: #621AFF;
-    height: 100%;
-    /*width: 100%;*/
-    /*text-rendering: optimizeLegibility;*/
+    text-rendering: optimizeLegibility;
+    cursor: auto;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-style: normal;
+    font-weight: normal;
 }
 
 .page {
     bottom:0; 
-    /*padding-top:200px;*/
     position:absolute; 
     text-align:center;
     top:0;  
     width:100%; 
 }
 
+.row {
+    margin: 0 auto;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
 #header {
     background-color: #FFFEF8;
     max-width: 100%;
     width: 100%;
-    /*height: 25%;*/
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -42,6 +71,8 @@ body {
     padding: 5% 10%;
     width: 80%;
     margin: 0 auto;
+    font-size: 2.75rem;
+    line-height: 1.4;
 }
 
 /*red*/
@@ -60,32 +91,32 @@ body {
 }
 
 .nav-button {
-    color: #ffffff;
-    font-family: "Source Code Pro", "Courier New", Courier, monospace;
-    text-shadow: 0px 0px 6px rgba(60,60,60,0.7);
     height: 90px;
     width: 150px;
     line-height: 90px;
     padding: 0px;
     margin: 30px 20px;
+    vertical-align: middle;
+    color: #ffffff;
+    font-family: "Source Code Pro", "Courier New", Courier, monospace;
+    text-shadow: 0px 0px 6px rgba(60,60,60,0.7);
+    text-decoration: none;
+    border-radius: 1000px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all 250ms ease;
-    vertical-align: middle;
 }
 
 .nav-button:hover {
     height: 150px;
     line-height: 150px;
-    /*margin: 0px 20px;*/
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    /*padding: 0px;*/
     transform: translateY(-5px);
     transition: all 250ms ease;
 }
 
 .nav-button:active {
     box-shadow: inset 0 0 8px rgba(0,0,0,0.94);
-    transition: all 100ms;
+    transition: all 100ms ease;
 }
 
 .page-loaded.ng-enter {
@@ -115,7 +146,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*padding: 2% 10%;*/
     height: 200px;
     width: 80%;
     margin: 0 auto;
