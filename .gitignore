@@ -1,0 +1,12 @@
+# ignore swp files and that weird DS_Store file.
+
+.netrwhist
+*.swp
+*~
+.DS_Store
+.DS_Store?
+*.log
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
